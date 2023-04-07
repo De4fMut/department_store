@@ -1,18 +1,40 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="home">
+        <Hello msg="Welcome to Your Vue.js App" />
+        <my-button @click="log">Get log</my-button>
+        <item-list 
+        :items="items" 
+        />
+    </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Hello from '@/components/HelloWorld.vue'
+import ItemList from '@/components/ItemList.vue'
+import json from '@/assets/products.json'
+
+
 
 export default {
-  name: 'HomeView',
+  name: 'home',
+  data() {
+    return {
+      items: json,
+    }
+  },
   components: {
-    HelloWorld
-  }
+    Hello,
+    ItemList,
+  },
+  methods: {
+    log(item){
+      console.log(this.item)
+    }
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>

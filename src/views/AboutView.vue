@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <prod-item :item="item"/>
+    <h1>{{ $store.state.likes }}</h1>
   </div>
 </template>
 
